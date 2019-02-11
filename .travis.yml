@@ -18,8 +18,7 @@ cache:
 # Publish to Github when creating a tag
 deploy:
   - provider: releases
-    api_key:
-      secure: "Jb8O1KISE8vwXyhsi4WiPL75h4m42aM7wuTmpFOR3AX1eEJYiblxdUkZdDaEEG63lKFGHG5UoUXvALE5h8ii4x/F2R85aOlAE9cqtgXZFUO3fErtZQmDQE1FDp2ZEzINGhNIMfHAUlrch3U0Y3grKG1lr2FAMQkVHYbRyEYH81DYhvFDAMI0Lnzwm0S1/oXEtv1ICnKPcNu12a18I4Z5fhRw0xnThUzAlIFhgTxgAMEMCclimBVAskRbfz7BBTU0TV+x2qfBCto918a6f4QEpAPxujrtB9CCDeJOMRTWcVY5AajVZixDDBL3KTzX9U3gcG0Q96ftjJfqewgA01OskHOUSbMqGWrniZe/Xfwn7jEN9RNtY8rjAQiJPNoXNtCdc/MzfuDHipjJPOD01Yqsz9TGeQ9IQk21PNdyeUdcp3F2tmRHPMiaNj1QgbkcFxzXEPSEVd0sBWBykCIwneLJnY+wa17m6GQDHdYaAHNU1FjXWc3tv1Ss5Q7BKuCUeqygGa0OWTAySqZi6bSgcq/CamqM5c5kfFF9Bb6Plg1dMXa0lG0Ws7uGsY45rp9ibD7zM/3+LLfNojVYqtu1sH1kN+iEktzmJPFCMYbAMKokc0G34flZA4syoJJzZRPIRqNxSgodKv6iOMpaQ2Q3+OJns+0ry2bPWXHUva+Zew8KtzU="
+    api_key: ${GITHUB_KEY}
     file_glob: true
     file:
       - ./*/**/build/libs/*.jar
@@ -28,3 +27,8 @@ deploy:
       repo: Virtlink/autojar
       branch: master
       tags: true
+
+# Environment variables
+env:
+  global:
+    secure: gCXHvu8q1bOsmAiyGjAGtq/WWDBYITQipXcW8HGKwEUYPzCjykOMTvqdzT84HzDAxQqEz0w7urOkIX+NkhK8lLJpowAOFAYcE4Apt+XO+MqoBkIZWHY53/rQx7B/F6SVB514+KfNyKsVsMLPQQx93KiZJ0HgbZpy+CIq4wsDI1aJr75bqGtzRx8yUd8YEXq9eow2EF7uzBVI7TpOmczy5+kFBO/QeReSRNXCO+DI7r1HAjvYgwk9t7uqk3cgbywaP+VH6v8kno7SbQAuqUJlxEAp2BkxLJbTe/sR5Al78ua5CSuOW3s+PuRhI9u8IdcQh7zk/53MV8MKR3rjPJEsN4xmHuoHeIh777V2bCXg5i6fyQlPf0j6H9/Bfie95RO3xMBBzuWNxovCHc61M3PRKc6IPR2FQL83egjcPB/BFpuxpyoBSCdhwWHLcNuVPRrgHZX2qq6e8q2xGGeVYLKy2PI8p9kYAx4/4DKfhb2ooMIIq6NrjIkUuOaDmx8/lqiC5gwknDZ+gu36NnmpP00B/1fJgyU0E5d9otcIEijVfVd8k9I6N6WtcaWtiwBSa8MvD8FHbIVS5L9CVzeUt9ss/a+QqcXswrVxh0NsGjdfNm9rsE9SHWN82J+yFL11cKftzFF2bLP2bQab4/ORFSmDRuPVcnzr6+bD/vFpO71fyiU=
