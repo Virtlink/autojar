@@ -18,7 +18,8 @@ package de.monoped.utils;
  */
 
 import java.io.*;
-import org.apache.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /** Expand wildcards in file names
  *  @author      Bernd Eggink (monoped@users.sourceforge.net)
@@ -26,7 +27,7 @@ import org.apache.log4j.*;
 
 public class FileExpand
 {
-    static Logger       logger = Logger.getLogger(FileExpand.class);
+    static Logger logger = LogManager.getLogger(FileExpand.class);
 
     //----------------------------------------------------------------------
 

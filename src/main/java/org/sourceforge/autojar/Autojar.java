@@ -20,7 +20,8 @@ package org.sourceforge.autojar;
 import de.monoped.utils.*;
 import java.io.*;
 import java.util.*;
-import org.apache.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /** Autojar main class 
  *  @author Bernd Eggink (monoped@users.sourceforge.net)  
@@ -28,7 +29,7 @@ import org.apache.log4j.*;
 
 public class Autojar
 {
-    static Logger               logger = Logger.getLogger(Autojar.class);
+    static Logger logger = LogManager.getLogger(Autojar.class);
     static final String         VERSION = 
                                     "Autojar " + Version.VERSION + ", Copyright (C) 2004 Bernd Eggink\n" +
                                     "http://autojar.sourceforge.net/\n" +

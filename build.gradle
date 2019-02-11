@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'de.monoped'
+version '3.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation     "org.apache.bcel:bcel:6.3"
+    implementation     "org.apache.logging.log4j:log4j-api:2.11.2"
+    implementation     "org.apache.logging.log4j:log4j-core:2.11.2"
+    testImplementation "junit:junit:4.12"
+}

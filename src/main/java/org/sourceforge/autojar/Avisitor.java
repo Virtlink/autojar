@@ -23,7 +23,9 @@ import org.apache.bcel.*;
 import org.apache.bcel.classfile.*;
 import org.apache.bcel.generic.*;
 import org.apache.bcel.util.*;
-import org.apache.log4j.*;
+//import org.apache.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.sourceforge.autojar.*;
 
 /** Visitor, handles ConstantClass entries 
@@ -33,7 +35,7 @@ import org.sourceforge.autojar.*;
 class Avisitor
     extends org.apache.bcel.classfile.EmptyVisitor
 {
-    static Logger       logger = Logger.getLogger(Avisitor.class);
+    static Logger logger = LogManager.getLogger(Avisitor.class);
 
     private JavaClass   klass;
     private Ajar        ajar;

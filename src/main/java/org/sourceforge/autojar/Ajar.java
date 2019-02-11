@@ -28,7 +28,10 @@ import org.apache.bcel.*;
 import org.apache.bcel.classfile.*;
 import org.apache.bcel.generic.*;
 import org.apache.bcel.util.*;
-import org.apache.log4j.*;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 
 /** Class providing a public interface (used by Autojar and Eclipse plugin).
  *  @author Bernd Eggink (monoped@users.sourceforge.net)  
@@ -36,7 +39,7 @@ import org.apache.log4j.*;
 
 public class Ajar
 {
-
+    // @formatter:off
                                     /** Don't check for dynamic loading. */
     static public final int         DYN_OFF = 0; 
 
@@ -83,6 +86,7 @@ public class Ajar
                                     missing;
     private Logger                  logger;
     private String[]                bootPathComps;
+    // @formatter:on
             
     //----------------------------------------------------------------------
 
@@ -119,7 +123,7 @@ public class Ajar
         this.classPathList = classPathList;
         extensionList = new ArrayList();
 
-        logger = Logger.getRootLogger();
+        logger = LogManager.getRootLogger();
 
         switch (level)
         {
@@ -133,7 +137,7 @@ public class Ajar
             default:            logLevel = Level.WARN;
         }
 
-        logger.setLevel(logLevel);
+        Configurator.setRootLevel(logLevel);
 
         doneFiles = new HashSet();
         zipEntries = new HashSet();
