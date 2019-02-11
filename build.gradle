@@ -6,6 +6,18 @@ plugins {
 }
 apply from: 'properties.gradle'
 
+// Get the version number from the latest Git tag
+def getVersionName = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'describe', '--tags'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+project.version = getVersionName()
+
 repositories {
     mavenCentral()
 }
