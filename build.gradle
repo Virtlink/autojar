@@ -1,12 +1,9 @@
 plugins {
     id 'java'
+    id 'maven'
+    id 'application'
 }
-
-group 'de.monoped'
-version '3.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+apply from: 'properties.gradle'
 
 repositories {
     mavenCentral()
@@ -19,6 +16,67 @@ dependencies {
     testImplementation "junit:junit:4.12"
 }
 
-task javaDoc(type: Javadoc) {
-    source = sourceSets.main.allJava
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier "javadoc"
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier "sources"
+    from sourceSets.main.allSource
+    extension "jar"
+}
+
+sourceCompatibility = javaSourceCompatibility
+targetCompatibility = javaTargetCompatibility
+compileJava {
+    options.encoding = sourceEncoding
+    sourceCompatibility = javaSourceCompatibility
+    targetCompatibility = javaTargetCompatibility
+}
+compileTestJava {
+    options.encoding = sourceEncoding
+    sourceCompatibility = javaSourceCompatibility
+    targetCompatibility = javaTargetCompatibility
+}
+
+application {
+    mainClassName = 'org.sourceforge.autojar.Autojar'
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+configure(install.repositories.mavenInstaller) {
+    pom.project {
+        inceptionYear project_inceptionyear
+        name project_name
+        packaging 'jar'
+        description project.description
+
+        url project_url
+
+        scm {
+            url scm_url
+            connection scm_connection
+            developerConnection scm_devconnection
+        }
+
+        licenses {
+            license {
+                name license_id
+                url license_url
+                distribution license_distribution
+            }
+        }
+
+        developers {
+            developer {
+                name developer_name
+                id developer_id
+                email developer_email
+            }
+        }
+    }
 }

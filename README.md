@@ -1,10 +1,17 @@
 # Autojar
+[![Travis](https://img.shields.io/travis/Virtlink/autojar.svg)](https://travis-ci.org/Virtlink/autojar)
+[![GitHub version](https://badge.fury.io/gh/Virtlink%2Fautojar.svg)](https://github.com/Virtlink/autojar/releases/latest)
+[![GitHub license](https://img.shields.io/github/license/Virtlink/autojar.svg)](https://github.com/Virtlink/autojar/blob/master/LICENSE)
+
 This is a fork of the [Autojar][1] project by Bernd Eggink.
+
 
 ## Building
 Execute the following command in the project root directory:
 
-    ant jar
+    gradle install
+
+You can find the resulting artifacts in the 
 
 
 ## License

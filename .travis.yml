@@ -1,0 +1,29 @@
+language: java
+jdk:
+  - oraclejdk8
+
+# Build the project
+script:
+  - ./gradlew build --scan -s
+
+# Store the Gradle cache
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+# Publish to Github when creating a tag
+deploy:
+  - provider: releases
+    api_key: ${GITHUB_API_KEY}
+    file_glob: true
+    file:
+      - ./*/**/build/libs/*.jar
+    skip_cleanup: true
+    on:
+      repo: Virtlink/autojar
+      branch: master
+      tags: true
