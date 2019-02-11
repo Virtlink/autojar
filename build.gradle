@@ -45,9 +45,20 @@ compileTestJava {
 application {
     mainClassName = mainClassName
 }
+
 jar {
     manifest {
         attributes 'Main-Class': mainClassName
+    }
+}
+
+buildScan {
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+
+    if (System.getenv('CI')) {
+        publishAlways()
+        tag 'CI'
     }
 }
 
