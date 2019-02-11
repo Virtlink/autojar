@@ -18,7 +18,8 @@ cache:
 # Publish to Github when creating a tag
 deploy:
   - provider: releases
-    api_key: ${GITHUB_API_KEY}
+    api_key:
+      secure: "Jb8O1KISE8vwXyhsi4WiPL75h4m42aM7wuTmpFOR3AX1eEJYiblxdUkZdDaEEG63lKFGHG5UoUXvALE5h8ii4x/F2R85aOlAE9cqtgXZFUO3fErtZQmDQE1FDp2ZEzINGhNIMfHAUlrch3U0Y3grKG1lr2FAMQkVHYbRyEYH81DYhvFDAMI0Lnzwm0S1/oXEtv1ICnKPcNu12a18I4Z5fhRw0xnThUzAlIFhgTxgAMEMCclimBVAskRbfz7BBTU0TV+x2qfBCto918a6f4QEpAPxujrtB9CCDeJOMRTWcVY5AajVZixDDBL3KTzX9U3gcG0Q96ftjJfqewgA01OskHOUSbMqGWrniZe/Xfwn7jEN9RNtY8rjAQiJPNoXNtCdc/MzfuDHipjJPOD01Yqsz9TGeQ9IQk21PNdyeUdcp3F2tmRHPMiaNj1QgbkcFxzXEPSEVd0sBWBykCIwneLJnY+wa17m6GQDHdYaAHNU1FjXWc3tv1Ss5Q7BKuCUeqygGa0OWTAySqZi6bSgcq/CamqM5c5kfFF9Bb6Plg1dMXa0lG0Ws7uGsY45rp9ibD7zM/3+LLfNojVYqtu1sH1kN+iEktzmJPFCMYbAMKokc0G34flZA4syoJJzZRPIRqNxSgodKv6iOMpaQ2Q3+OJns+0ry2bPWXHUva+Zew8KtzU="
     file_glob: true
     file:
       - ./*/**/build/libs/*.jar
