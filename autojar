@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$(dirname $0)/gradlew run -p $(dirname $0) --quiet --args="$*"
+$(dirname $0)/gradlew run -p $(dirname $0) --quiet -s -PrunWorkingDir="$PWD" --args="$*"

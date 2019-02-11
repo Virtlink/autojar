@@ -9,6 +9,8 @@ repositories {
     mavenCentral()
 }
 
+mainClassName = 'org.sourceforge.autojar.Autojar'
+
 dependencies {
     implementation     "org.apache.bcel:bcel:6.3"
     implementation     "org.apache.logging.log4j:log4j-api:2.11.2"
@@ -41,7 +43,12 @@ compileTestJava {
 }
 
 application {
-    mainClassName = 'org.sourceforge.autojar.Autojar'
+    mainClassName = mainClassName
+}
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
 }
 
 artifacts {
@@ -81,6 +88,5 @@ configure(install.repositories.mavenInstaller) {
     }
 }
 
-task printPath() {
-    print jar.archivePath
-}
+// Workaround for the fact that Gradle sets the working directory to the project directory by default.
+run.workingDir = (project.hasProperty('runWorkingDir')) ? new File(project.runWorkingDir) : project.projectDir
