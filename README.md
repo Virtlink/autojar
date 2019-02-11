@@ -3,15 +3,14 @@
 [![GitHub version](https://badge.fury.io/gh/Virtlink%2Fautojar.svg)](https://github.com/Virtlink/autojar/releases/latest)
 [![GitHub license](https://img.shields.io/github/license/Virtlink/autojar.svg)](https://github.com/Virtlink/autojar/blob/master/LICENSE)
 
-This is a fork of the [Autojar][1] project by Bernd Eggink.
+This is a fork of the [Autojar][1] project by Bernd Eggink. [More documentation][2].
+The original sources can be found [on SourceForge][3].
 
 
-## Building
+## Execution
 Execute the following command in the project root directory:
 
-    gradle install
-
-You can find the resulting artifacts in the 
+    autojar -o minimized.jar original.jar
 
 
 ## License
@@ -35,4 +34,5 @@ along with this program; if not, write to the Free Software Foundation, Inc.,
 
 
 [1]: http://autojar.sourceforge.net/en_d/index.html
-[2]: https://sourceforge.net/projects/autojar/
+[2]: http://autojar.sourceforge.net/en_d/usage.html
+[3]: https://sourceforge.net/projects/autojar/

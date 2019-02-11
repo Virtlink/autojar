@@ -80,3 +80,7 @@ configure(install.repositories.mavenInstaller) {
         }
     }
 }
+
+task printPath() {
+    print jar.archivePath
+}
