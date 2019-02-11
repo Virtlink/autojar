@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/autojar.iml" filepath="$PROJECT_DIR$/autojar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.monoped.autojar.iml" filepath="$PROJECT_DIR$/.idea/modules/de.monoped.autojar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.monoped.autojar.main.iml" filepath="$PROJECT_DIR$/.idea/modules/de.monoped.autojar.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.monoped.autojar.test.iml" filepath="$PROJECT_DIR$/.idea/modules/de.monoped.autojar.test.iml" />
     </modules>
   </component>
 </project>

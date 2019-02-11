@@ -48,7 +48,7 @@ import java.util.*;
  *
  *      String[]   files = getopt.getParms();
  *      
- *      for (int i = 0; i < files.length; ++i)
+ *      for (int i = 0; i &lt; files.length; ++i)
  *          doSomethingWith(files[i]);
  *  }
  *

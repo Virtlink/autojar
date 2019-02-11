@@ -18,3 +18,7 @@ dependencies {
     implementation     "org.apache.logging.log4j:log4j-core:2.11.2"
     testImplementation "junit:junit:4.12"
 }
+
+task javaDoc(type: Javadoc) {
+    source = sourceSets.main.allJava
+}
